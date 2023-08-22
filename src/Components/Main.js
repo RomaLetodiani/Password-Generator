@@ -1,6 +1,11 @@
 import CheckersButton from './CheckersButton';
 import { Slider } from '@mui/material';
 import { usePassword } from '../Contexts/PasswordContext';
+import { styled } from '@mui/system';
+
+const StyledSlider = styled(Slider)({
+  color: '#3DDBC4',
+});
 
 const Main = () => {
   const {
@@ -23,7 +28,7 @@ const Main = () => {
     <div className="p-4 flex flex-col justify-center items-center">
       <div className="w-11/12 my-3 flex flex-wrap md:flex-nowrap">
         <p className="md:w-40 text-xl">Length: {passwordLength}</p>
-        <Slider
+        <StyledSlider
           value={passwordLength}
           onChange={(e) => setPasswordLength(e.target.value)}
           min={5}
