@@ -1,16 +1,10 @@
-import { VscRefresh, VscCopy } from 'react-icons/vsc';
-import imagePassword from '../Images/passwordGif.gif';
-import { usePassword } from '../Contexts/PasswordContext';
-import CopyToClipboard from 'react-copy-to-clipboard';
+import { VscRefresh, VscCopy } from "react-icons/vsc";
+import imagePassword from "../Images/passwordGif.gif";
+import { usePassword } from "../Contexts/PasswordContext";
+import CopyToClipboard from "react-copy-to-clipboard";
 
-const Header = () => {
-  const {
-    password,
-    copyPassword,
-    isCopied,
-    onChangePassword,
-    generatePassword,
-  } = usePassword();
+export const Header = () => {
+  const { password, copyPassword, isCopied, onChangePassword, generatePassword } = usePassword();
 
   return (
     <div className="text-center border-b border-[#fff] border-dashed flex flex-col items-center">
@@ -38,12 +32,10 @@ const Header = () => {
         <CopyToClipboard text={password} onCopy={copyPassword}>
           <button className="flex gap-1 font-bold p-2 px-4 rounded-md bg-[#fff] text-[#000] hover:bg-[#a7e1b3] w-28">
             <VscCopy className="text-[25px]" />
-            {isCopied ? 'Copied' : 'Copy'}
+            {isCopied ? "Copied" : "Copy"}
           </button>
         </CopyToClipboard>
       </div>
     </div>
   );
 };
-
-export default Header;

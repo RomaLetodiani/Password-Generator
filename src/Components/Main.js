@@ -1,13 +1,13 @@
-import CheckersButton from './CheckersButton';
-import { Slider } from '@mui/material';
-import { usePassword } from '../Contexts/PasswordContext';
-import { styled } from '@mui/system';
+import { CheckersButton } from "./CheckersButton";
+import { Slider } from "@mui/material";
+import { usePassword } from "../Contexts/PasswordContext";
+import { styled } from "@mui/system";
 
 const StyledSlider = styled(Slider)({
-  color: '#3DDBC4',
+  color: "#3DDBC4",
 });
 
-const Main = () => {
+export const Main = () => {
   const {
     passwordLength,
     setPasswordLength,
@@ -42,15 +42,15 @@ const Main = () => {
           <CheckersButton
             checked={upper}
             setCheckBoxStates={setCheckBoxStates}
-            name={'upper'}
-            label={'Uppercase'}
+            name={"upper"}
+            label={"Uppercase"}
             onChange={handlePasswordFields}
           />
           <CheckersButton
             checked={lower}
             setCheckboxStates={setCheckBoxStates}
-            name={'lower'}
-            label={'Lowercase'}
+            name={"lower"}
+            label={"Lowercase"}
             onChange={handlePasswordFields}
           />
         </div>
@@ -58,15 +58,15 @@ const Main = () => {
           <CheckersButton
             checked={symbols}
             setCheckboxStates={setCheckBoxStates}
-            name={'symbols'}
-            label={'Symbols'}
+            name={"symbols"}
+            label={"Symbols"}
             onChange={handlePasswordFields}
           />
           <CheckersButton
             checked={numbers}
             setCheckboxStates={setCheckBoxStates}
-            name={'numbers'}
-            label={'Numbers'}
+            name={"numbers"}
+            label={"Numbers"}
             onChange={handlePasswordFields}
           />
         </div>
@@ -80,5 +80,3 @@ const Main = () => {
     </div>
   );
 };
-
-export default Main;
